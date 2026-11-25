@@ -13,7 +13,7 @@ function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className
 function icon(name){const n=el('i','fa fa-'+name);n.setAttribute('aria-hidden','true');return n;}
 function button(text,fn,cls='',glyph){const b=el('button',cls);b.type='button';if(glyph)b.append(icon(glyph));if(text)b.append(el('span','',text));if(!text&&glyph)b.classList.add('icon-only');b.onclick=fn;return b;}
 function iconButton(glyph,label,fn,cls=''){const b=button('',fn,cls,glyph);b.title=label;b.setAttribute('aria-label',label);return b;}
-function mediaUrl(path){if(!path)return '';if(window.fotoboxPreviewMode&&path==='demo/start-background.png')return path;if(window.fotoboxPreviewMode)return 'demo/party-photo.png';return (window.remoteMode?'/media/':'https://media.local/')+encodeURIComponent(String(path).split(/[\\/]/).at(-1));}
+function mediaUrl(path){if(!path)return '';if(window.fotoboxPreviewMode&&path==='demo/neutral-background.png')return path;if(window.fotoboxPreviewMode)return 'demo/party-photo.png';return (window.remoteMode?'/media/':'https://media.local/')+encodeURIComponent(String(path).split(/[\\/]/).at(-1));}
 function fileName(path){return path?String(path).split(/[\\/]/).at(-1):'';}
 /* Bildschirm der Box: echte Größe des Kioskbildschirms (von der Box gemeldet), sonst dieser Bildschirm. */
 function kioskSize(){const w=display?.width||screen.width||1280,h=display?.height||screen.height||720;return {width:Math.round(w),height:Math.round(h),ratio:w/h};}
