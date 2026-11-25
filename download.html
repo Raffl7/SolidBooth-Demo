@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dein Foto · SolidBooth Demo</title>
+<link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+<style>
+:root{--bg:#0f151b;--card:#18222b;--line:#2c3a46;--text:#eef4f8;--muted:#a9b8c3;--accent:#9fd0ea;--warm:#ffc266}
+*{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:radial-gradient(120% 70% at 50% 0,#1d2c38,var(--bg));color:var(--text);font:16px/1.5 "Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 16px 40px}
+header{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+header img{width:36px;height:36px}
+header strong{font-size:19px;letter-spacing:.2px}header b{color:var(--accent);font-weight:600}
+main{width:100%;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 20px 60px #0006}
+h1{font-size:22px;margin:4px 4px 4px;font-weight:600}
+p{margin:0 4px 16px;color:var(--muted)}
+.photo{display:block;width:100%;border-radius:12px;background:#000;aspect-ratio:3/2;object-fit:cover}
+.actions{display:grid;gap:10px;margin-top:16px}
+a.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:12px;font-weight:600;text-decoration:none;font-size:17px}
+.primary{background:var(--accent);color:#0c1a22}.secondary{border:1px solid var(--line);color:var(--text)}
+.note{margin-top:18px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.note b{color:var(--warm);font-weight:600}
+code{font-family:inherit;color:var(--text)}
+</style>
+</head>
+<body>
+<header><img src="brand-mark.svg" alt=""><strong>Solid<b>Booth</b></strong></header>
+<main>
+ <h1>Dein Foto ist da 🎉</h1>
+ <p>Code <code id="code">DEMO</code></p>
+ <img class="photo" src="photo-sample.svg" alt="Beispielfoto aus der Fotobox">
+ <div class="actions">
+  <a class="btn primary" href="photo-sample.svg" download="SolidBooth-Demo.svg">Foto speichern</a>
+  <a class="btn secondary" href="index.html">Mehr über die Demo</a>
+ </div>
+ <div class="note"><b>Demo:</b> In der echten Fotobox erscheint hier genau das Foto, das du gerade gemacht hast. Die Box stellt es über einen sicheren, zeitlich begrenzten Link bereit. In dieser Web-Demo bleibt dein Webcam-Foto auf dem Vorführrechner, darum siehst du ein Beispielbild.</div>
+</main>
+<script>const c=new URLSearchParams(location.search).get('code');if(c&&/^[A-Z0-9]{2,12}$/.test(c))document.getElementById('code').textContent=c;</script>
+</body>
+</html>

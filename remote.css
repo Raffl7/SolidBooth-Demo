@@ -1,0 +1,22 @@
+/* Anmeldung (vor dem Login frei abrufbar) und Ergänzungen für die Verwaltung im Browser. */
+:root{color-scheme:dark}
+.login{margin:0;background:#16171a radial-gradient(circle at 50% -20%,#2a3a44 0,transparent 55%);color:#eceef0;font:16px/1.5 'Segoe UI',system-ui,sans-serif;min-height:100dvh;display:grid;place-items:center}
+.login main{position:static;width:min(400px,100vw);padding:32px 24px;box-sizing:border-box}
+.login-mark{display:inline-flex;align-items:center;gap:12px}
+.login-mark svg{width:42px;height:42px;filter:drop-shadow(0 3px 10px #6f9fb866)}
+.login-mark span{display:grid;line-height:1.1}.login-mark strong{font-size:20px}.login-mark small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#a6c7d8}
+.login h1{font-size:28px;margin:22px 0 6px;font-weight:650}
+.login p,.login .hint{color:#a3a8b0;margin:0}
+.login form{margin-top:24px;background:#1f2125;border:1px solid #33363c;border-radius:12px;padding:20px}
+.login label{display:block;margin:0 0 8px;font-weight:600}
+.login input{width:100%;box-sizing:border-box;font:24px 'Segoe UI',sans-serif;letter-spacing:6px;padding:12px 14px;border:1px solid #454950;border-radius:8px;background:#141518;color:#fff;text-align:center}
+.login input:focus{outline:none;border-color:#a6c7d8;box-shadow:0 0 0 3px #a6c7d82a}
+.login input[aria-invalid=true]{border-color:#f2907f}
+.login button{width:100%;margin:16px 0 0;padding:13px;background:#a6c7d8;border:0;border-radius:8px;color:#12222a;font:600 16px 'Segoe UI',sans-serif;cursor:pointer}
+.login button:disabled{opacity:.5}
+.login .hint{font-size:13px;margin-top:18px}
+.login #error{color:#f2907f;min-height:1.5em;margin-top:10px}
+.remote #remote-recovery{position:fixed;z-index:3000;bottom:84px;left:12px;right:12px;max-width:640px;margin:auto;padding:14px;background:#3d2420;border:1px solid #c98472;border-radius:10px;box-shadow:0 8px 40px #0008;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:#f6e7e3;font:14px/1.45 'Segoe UI',sans-serif}
+.remote #remote-recovery button{min-height:40px}
+@media(min-width:761px){.remote #remote-recovery{bottom:20px}}
+.login-mark strong b{font-weight:400;color:#c4e4f4}
