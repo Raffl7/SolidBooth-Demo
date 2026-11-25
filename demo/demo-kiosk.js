@@ -9,7 +9,7 @@
 
  async function loadSettings(){
   try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&typeof s==='object'&&Array.isArray(s.Events))return s;}catch{}
-  return (await fetch('demo/model.json?v=neutral-20261125')).json();
+  return (await fetch('demo/model.json?v=erlanger-20261125')).json();
  }
  const show=s=>window.postMessage({type:'preview',settings:s,page:'home',interactive:true,test:true,nonce:Date.now()},location.origin);
  /* Direkt starten: Die Bereitmeldung des Kiosks kann schon vor diesem Skript eingetroffen sein. */

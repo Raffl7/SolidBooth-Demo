@@ -3,7 +3,7 @@
  window.fotoboxPreviewMode=true;window.remoteMode=new URLSearchParams(location.search).has('mobile');
  if(window.remoteMode){document.documentElement.classList.add('remote');const css=document.createElement('link');css.rel='stylesheet';css.href='remote.css';document.head.append(css);window.remoteLogout=async()=>location.reload();}
  let settings,defaults,revision=1;const listeners=[],profiles=new Map();
- const fixture=fetch('demo/model.json?v=neutral-20261125').then(r=>r.json()).then(d=>window.demoLoad?window.demoLoad(d):d).then(data=>{settings=data;defaults=structuredClone(data);profiles.set(settings.ActiveEvent,structuredClone(settings));});
+ const fixture=fetch('demo/model.json?v=erlanger-20261125').then(r=>r.json()).then(d=>window.demoLoad?window.demoLoad(d):d).then(data=>{settings=data;defaults=structuredClone(data);profiles.set(settings.ActiveEvent,structuredClone(settings));});
  const emit=d=>setTimeout(()=>listeners.forEach(fn=>fn({data:{...d,revision}})),0);
  const model=()=>({type:'model',settings,defaults,eventPreviews:Object.fromEntries(settings.Events.map(e=>[e.Id,{PhotoCount:0,BackgroundColor:settings.BackgroundColor,ShowSingle:settings.ShowSingle,ShowCollage:settings.ShowCollage,ShowGallery:settings.ShowGallery}])),eventHealth:{FreeBytes:0,MissingAssets:[]},fonts:['Segoe UI','Arial','Georgia','Verdana'],revisions:[],cameraReady:false,runtime:{camera:'Demo ohne Kamera',kioskOpen:false,captureBusy:false,photoCount:0,history:[]},access:{urls:[],status:'Lokale Entwurfsvorschau',pinConfigured:false},latestPhoto:'261116_184200.jpg',display:{width:1920,height:1080}});
  async function post(m){await fixture;try{
