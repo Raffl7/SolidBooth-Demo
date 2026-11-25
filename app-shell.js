@@ -196,7 +196,7 @@ async function openNewEvent(duplicate=false){
 
 /* ---------- Letztes Foto ---------- */
 function latestPhotoUrl(){
- if(!latestPhoto)return '';if(window.fotoboxPreviewMode)return 'photo-sample.svg';
+ if(!latestPhoto)return '';if(window.fotoboxPreviewMode)return 'demo/sample-photo.png';
  return window.remoteMode?'/api/latest-photo?v='+encodeURIComponent(latestPhoto):'https://eventphotos.local/'+String(model.ActiveEvent).replaceAll('-','')+'/originals/'+encodeURIComponent(latestPhoto);
 }
 function photoTime(name){const m=/^(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})/.exec(name||'');return m?`${m[3]}.${m[2]}.20${m[1]} · ${m[4]}:${m[5]} Uhr`:'';}
