@@ -40,7 +40,7 @@
  }
  /* Vorschau-Leinwände auf Aufnahme- und Ergebnisseite zeigen nach einer Webcam-Aufnahme das echte Foto. */
  const src=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,'src');
- const useSnap=v=>lastSnap&&(page==='result'||page==='capture')&&/(^|\/)(?:(photo-)?sample\.svg|sample-photo\.png)$/.test(String(v));
+ const useSnap=v=>lastSnap&&(page==='result'||page==='capture')&&/(^|\/)(?:(photo-)?sample\.svg|party-photo\.png)$/.test(String(v));
  Object.defineProperty(HTMLImageElement.prototype,'src',{configurable:true,enumerable:src.enumerable,get(){return src.get.call(this);},set(v){src.set.call(this,useSnap(v)?lastSnap:v);}});
  const loadImage=url=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);src.set.call(i,url);});
  /* Collage aus den Webcam-Fotos nach der gewählten Collagevorlage zusammensetzen. */
