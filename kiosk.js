@@ -2,7 +2,7 @@
 window.remoteMode=location.protocol==='http:';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const isEditor=location.search.includes('editor');let settings,page='home',photos=[],photo=null,ready=false,interactive=false,locked=false,modal='',pin='',taps=0,lastTap=0,noticeTimer,previewTimers=[],previewLayout=0;
-const media=p=>p?(/\.(mp4|webm)$/i.test(p)?(window.remoteMode?'/media/':'https://video.local/'):(window.remoteMode?'/media/':'https://media.local/'))+encodeURIComponent(p.split(/[\\/]/).at(-1)):'';
+const media=p=>isEditor&&p==='demo/start-background.png'?p:p?(/\.(mp4|webm)$/i.test(p)?(window.remoteMode?'/media/':'https://video.local/'):(window.remoteMode?'/media/':'https://media.local/'))+encodeURIComponent(p.split(/[\\/]/).at(-1)):'';
 let selectionMode=false,resultExpanded=false,swipeStart=null,suppressTapUntil=0;let lastPreviewSignature='',lastCaptured='',viewerDirection='next';const selectedPhotos=new Set();let captureIndex=1,captureTotal=1,captureProcessed=false,tunnelStatus='';
 function send(cmd,extra={}){if(!isEditor)window.chrome.webview.postMessage({cmd,...extra});}
 function btn(action,label,glyph,primary=false,extra=''){return `<button class="btn ${primary?'primary':''} ${extra}" data-action="${action}" aria-label="${esc(label)}">${glyph?`<i class="fa fa-${glyph}" aria-hidden="true"></i>`:''}<span>${esc(label)}</span></button>`;}
